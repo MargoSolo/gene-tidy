@@ -36,10 +36,11 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]
+dev = ["pytest>=7.0", "build>=1.0"]
 
 [project.urls]
-Homepage = "https://github.com/gene-tidy/gene-tidy"
-Issues = "https://github.com/gene-tidy/gene-tidy/issues"
+Homepage = "https://github.com/MargoSolo/gene-tidy"
+Issues = "https://github.com/MargoSolo/gene-tidy/issues"
 
 [project.scripts]
 gene-tidy = "gene_tidy.cli:app"

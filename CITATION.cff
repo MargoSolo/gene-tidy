@@ -16,8 +16,8 @@ authors:
 version: "0.1.0"
 date-released: "2026-06-20"
 license: MIT
-repository-code: "https://github.com/gene-tidy/gene-tidy"
-url: "https://github.com/gene-tidy/gene-tidy"
+repository-code: "https://github.com/MargoSolo/gene-tidy"
+url: "https://github.com/MargoSolo/gene-tidy"
 keywords:
   - bioinformatics
   - genomics

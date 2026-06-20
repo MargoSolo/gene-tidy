@@ -55,4 +55,4 @@ Live API calls; HGVS, ClinVar, VEP, gnomAD, liftover, genome-build detection,
 clinical interpretation; non-human species; Ensembl transcript/protein-level
 resolution; reinterpreting numeric Excel date serials.
 
-[0.1.0]: https://github.com/gene-tidy/gene-tidy/releases/tag/v0.1.0-rc1
+[0.1.0]: https://github.com/MargoSolo/gene-tidy/releases/tag/v0.1.0-rc1

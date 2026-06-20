@@ -1,11 +1,11 @@
 # gene-tidy
 
 <!-- Badge placeholders — update the URLs once the repo is public / on PyPI. -->
-[![CI](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/gene-tidy/gene-tidy/actions)
+[![CI](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/MargoSolo/gene-tidy/actions)
 [![PyPI](https://img.shields.io/badge/pypi-v0.1.0-blue)](https://pypi.org/project/gene-tidy/)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gene-tidy/gene-tidy/blob/main/notebooks/gene_tidy_colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MargoSolo/gene-tidy/blob/main/notebooks/gene_tidy_colab.ipynb)
 
 **Clean messy gene/protein identifier tables — fully offline, fully audited, no code required.**
 
@@ -56,7 +56,7 @@ pip install gene-tidy
 From source:
 
 ```bash
-git clone https://github.com/gene-tidy/gene-tidy
+git clone https://github.com/MargoSolo/gene-tidy
 cd gene-tidy
 pip install -e .
 ```
