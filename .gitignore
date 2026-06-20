@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# gene-tidy run artifacts
+outputs/
+_smoke_out/
+_smoke.py
+
+# HGNC cache (downloaded full set; never the bundled subset)
+*.cache/
+hgnc_complete_set.txt
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

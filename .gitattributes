@@ -1,0 +1,10 @@
+# Normalize text line endings in the repo, but never touch binary assets.
+* text=auto eol=lf
+
+# Bundled binary data — keep byte-exact (protects bundled_tsv_gz_sha256).
+*.gz binary
+*.xlsx binary
+*.xls binary
+
+# Jupyter notebooks: treat as text but don't munge.
+*.ipynb text eol=lf

@@ -1,0 +1,26 @@
+{
+  "source": "HGNC complete set (Approved entries; core columns)",
+  "source_url": "https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt",
+  "hgnc_license": "HGNC data are made freely available under a CC0 public-domain dedication. See https://www.genenames.org/about/license/",
+  "hgnc_release": "complete_set_2026-06-20",
+  "downloaded_date": "2026-06-20",
+  "generated_utc": "2026-06-20T19:25:12+00:00",
+  "approved_record_count": 44997,
+  "record_count_total_in_source": 44997,
+  "retained_columns": [
+    "hgnc_id",
+    "symbol",
+    "name",
+    "locus_group",
+    "status",
+    "alias_symbol",
+    "prev_symbol",
+    "ensembl_gene_id",
+    "uniprot_ids",
+    "entrez_id",
+    "refseq_accession"
+  ],
+  "raw_download_sha256": "91741ffc9276aa624084b9851071c28573207b4e6c783196117bb6b63e7cf09e",
+  "bundled_tsv_gz_sha256": "6bb2951c56204cd7b387c4e40b8d46107f6bdc422e77b8e4f2088a5d39e1be4b",
+  "description": "Static, bundled subset-of-columns of the HGNC complete set (all Approved gene records) shipped with gene-tidy so resolution works fully offline. Matched against approved symbol, alias_symbol and prev_symbol. Only status=='Approved' entries are retained. Rebuild/verify via tools/build_hgnc_data.py."
+}

@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use gene-tidy in your research, please cite it as below, and also cite HGNC (see README Attribution)."
+title: "gene-tidy: offline, audited cleanup of messy gene/protein identifier tables"
+abstract: >-
+  gene-tidy is a no-code Python tool and Colab notebook that cleans messy
+  gene/protein identifier tables (TXT/CSV/XLSX) by mapping them to current HGNC
+  approved symbols and Ensembl/UniProt/Entrez/RefSeq cross-references. It works
+  fully offline against a bundled static HGNC complete set, recovers Excel
+  date-corrupted gene symbols, and never guesses silently or drops a row:
+  one-to-many and uncertain mappings are flagged for manual review.
+type: software
+authors:
+  - given-names: Margarita
+    family-names: Soloshenko
+    # orcid: "https://orcid.org/0000-0000-0000-0000"  # add when available
+version: "0.1.0"
+date-released: "2026-06-20"
+license: MIT
+repository-code: "https://github.com/gene-tidy/gene-tidy"
+url: "https://github.com/gene-tidy/gene-tidy"
+keywords:
+  - bioinformatics
+  - genomics
+  - HGNC
+  - gene symbols
+  - identifier mapping
+  - data cleaning
+  - reproducibility
+references:
+  - type: data
+    title: "HGNC complete set"
+    notes: "Gene nomenclature data bundled with gene-tidy, retrieved 2026-06-20, CC0 licensed."
+    license: CC0-1.0
+    url: "https://www.genenames.org/download/archive/"
+    authors:
+      - name: "HUGO Gene Nomenclature Committee (HGNC)"
