@@ -31,3 +31,12 @@ hgnc_complete_set.txt
 .idea/
 .DS_Store
 Thumbs.db
+
+# Secrets / credentials (never commit)
+token.txt
+token.txt.txt
+*.token
+*.secret
+.pypirc
+.env
+.env.*
