@@ -37,9 +37,9 @@ Inspired by [HGNChelper](https://cran.r-project.org/package=HGNChelper) (R), but
 in Python, mapping to all major IDs, with **explicit ambiguity handling** and
 **Excel date-corruption recovery** (`SEPT2 → "2-Sep"`, `MARCH1 → "1-Mar"`).
 
-![gene-tidy demo](docs/demo.gif)
+![gene-tidy demo: messy gene IDs in, clean audited table out](docs/demo_before_after.png)
 
-<!-- TODO: replace docs/demo.gif with a real screencast of the CLI / Colab run. -->
+<!-- Rendered from real gene-tidy 0.1.1 output on docs/demo_input.csv (see docs/demo_storyboard.md). A screencast GIF can replace this later. -->
 
 ## Scope & limitations
 
