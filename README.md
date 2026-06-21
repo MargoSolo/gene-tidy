@@ -9,10 +9,29 @@
 
 **Clean messy gene/protein identifier tables — fully offline, fully audited, no code required.**
 
-Drop in a TXT/CSV/XLSX from a paper, a supplementary file, or a lab Excel sheet,
-and get back a clean, multi-ID, fully-traceable table. Every value is mapped to
-the current HGNC approved symbol plus Ensembl / UniProt / Entrez / RefSeq
-cross-references — and nothing is ever guessed silently or dropped.
+You copy a gene list out of a paper or a supplementary Excel file and half of it
+is garbage: `p53` instead of `TP53`, `SEPT2` silently turned into `2-Sep`, dead
+symbols, IDs in five different formats. Drop the file in — get back clean HGNC
+symbols (plus Ensembl / UniProt / Entrez / RefSeq), an audit CSV, and a
+paste-ready methods paragraph. Ambiguous cases are **flagged, never guessed**,
+and nothing is dropped.
+
+```bash
+pip install gene-tidy
+gene-tidy messy_genes.csv --out outputs/   # -> clean / ambiguous / failed + audit + methods
+```
+
+### What that looks like
+
+| You typed | gene-tidy gives you |
+|---|---|
+| `p53` | → **TP53** (resolved from alias) |
+| `HER2` | → **ERBB2** (resolved from alias) |
+| `FRAP1` | → **MTOR** (resolved from previous symbol) |
+| `ENSG00000141510` | → **TP53** (Ensembl gene ID) |
+| `Sep-7` | → **SEPTIN7** (recovered from Excel date corruption) |
+| `2-Sep` | ⚠️ **ambiguous**: SEPTIN2 / SEPTIN6 — flagged for review, *not* guessed |
+| `FOOBAR1` | ❌ no match → `failed_rows.csv` (nothing silently dropped) |
 
 Inspired by [HGNChelper](https://cran.r-project.org/package=HGNChelper) (R), but
 in Python, mapping to all major IDs, with **explicit ambiguity handling** and
@@ -22,17 +41,26 @@ in Python, mapping to all major IDs, with **explicit ambiguity handling** and
 
 <!-- TODO: replace docs/demo.gif with a real screencast of the CLI / Colab run. -->
 
-## Scope
+## Scope & limitations
 
 gene-tidy is **HGNC-centered, offline, and reproducible**: it standardises human
 gene/protein identifiers against a bundled static HGNC complete set and records
-exactly which version it used. It is **not** a full
+exactly which version it used. If you need a fast, offline, auditable HGNC
+cleanup you can cite in a methods section, this is for you.
+
+**What it deliberately does _not_ do** — use
 [BioMart](https://www.ensembl.org/biomart/) / [VEP](https://www.ensembl.org/vep)
-/ [UniProt](https://www.uniprot.org/) mapping service — it does no live lookups,
-no transcript/variant annotation, and no cross-database ID expansion beyond the
-gene-level cross-references HGNC itself provides. If you need exhaustive,
-always-current, multi-database mapping, use those tools; if you need a fast,
-offline, auditable HGNC cleanup you can cite in a methods section, use gene-tidy.
+/ [UniProt](https://www.uniprot.org/) for these:
+
+- **Human only.** No other species.
+- **Static, bundled HGNC subset.** No live lookups, no API keys, no
+  always-current data — the exact version is pinned and recorded on every run.
+- **Gene-level only.** Ensembl transcript/protein IDs (`ENST…` / `ENSP…`) are
+  detected but not resolved offline; they are flagged for manual review.
+- **No variant or clinical interpretation.** No HGVS / ClinVar / VEP / gnomAD /
+  liftover / genome-build detection.
+- **No reinterpretation of numeric Excel date serials** (e.g. `44075`) — they are
+  indistinguishable from Entrez IDs and are intentionally left untouched.
 
 ## Why
 
@@ -200,15 +228,6 @@ click **Run** and see results immediately.
 
 [`notebooks/gene_tidy_colab.ipynb`](notebooks/gene_tidy_colab.ipynb)
 <!-- TODO: add an "Open in Colab" badge pointing at the hosted repo path. -->
-
-## Limitations (v0.1)
-
-- Ensembl **transcript/protein** IDs (`ENST…`/`ENSP…`) are detected but not
-  resolved offline (gene-level dump only); they are flagged for manual review.
-- Numeric Excel date *serials* (e.g. `44075`) are indistinguishable from Entrez
-  IDs and are intentionally **not** reinterpreted.
-- Human only. No HGVS / ClinVar / VEP / gnomAD / liftover / genome-build
-  detection / clinical interpretation (out of scope for v0.1).
 
 ## Development
 
