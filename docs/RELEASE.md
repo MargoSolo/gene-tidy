@@ -145,3 +145,63 @@ git tag v0.1.0-rc1
 ```
 
 Do **not** publish to PyPI for the release candidate.
+
+## 10. Build & check distribution artifacts
+
+```bash
+rm -rf dist build *.egg-info src/*.egg-info     # PowerShell: Remove-Item -Recurse -Force dist,build,*.egg-info,src/*.egg-info
+python -m pip install -U build twine            # or: pip install -e ".[dev]"
+python -m build
+python -m twine check dist/*
+```
+
+Expected: `twine check` reports `PASSED` for both the wheel and the sdist.
+
+## 11. TestPyPI validation (optional, throwaway)
+
+Use **API-token auth only**; username is literally `__token__`. Never print,
+log, commit, or store the token; never commit `.pypirc`.
+
+```bash
+# token supplied via environment, not echoed:
+#   export TWINE_USERNAME=__token__
+#   export TWINE_PASSWORD=pypi-<your TestPyPI token>
+python -m twine upload --repository testpypi dist/*
+```
+
+Validate the uploaded artifact in a clean venv (TestPyPI may lack deps, so use
+`--no-deps`):
+
+```bash
+python -m venv /tmp/gene-tidy-testpypi
+source /tmp/gene-tidy-testpypi/bin/activate        # Windows: .venv\Scripts\activate
+pip install --index-url https://test.pypi.org/simple/ --no-deps gene-tidy
+gene-tidy --version
+gene-tidy --help
+```
+
+Note: uploading version `0.1.0` to TestPyPI consumes that version slot on
+TestPyPI (it cannot be re-uploaded). The real-PyPI `0.1.0` slot is unaffected.
+
+## 12. Real PyPI publication checklist (do NOT run without explicit approval)
+
+Publish to real PyPI **only** after the maintainer explicitly approves. Before
+uploading:
+
+1. Restore the primary install command in `README.md` to `pip install gene-tidy`
+   and re-add a real PyPI badge.
+2. Confirm the package name is free on PyPI (`https://pypi.org/project/gene-tidy/`).
+3. Decide the version: ship stable `0.1.0` (recommended) — keep the GitHub
+   `v0.1.0-rc1` tag as the release candidate, and create the `v0.1.0` tag only
+   when the final PyPI-ready state is accepted.
+4. Rebuild clean artifacts and re-run `twine check dist/*` (sections 10).
+5. Create the release commit (if README/badges changed) and tag `v0.1.0`.
+6. Upload with API-token auth:
+
+   ```bash
+   #   export TWINE_USERNAME=__token__
+   #   export TWINE_PASSWORD=pypi-<your PyPI token>
+   python -m twine upload dist/*
+   ```
+
+7. Verify `https://pypi.org/project/gene-tidy/` and a clean `pip install gene-tidy`.
