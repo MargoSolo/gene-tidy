@@ -37,7 +37,7 @@ AUDIT_EXTRA_COLUMNS = ["hgnc_dump_date", "gene_tidy_version"]
 AUDIT_COLUMNS = OUTPUT_COLUMNS + AUDIT_EXTRA_COLUMNS
 
 # gene-tidy version, kept in sync with __init__.__version__.
-TOOL_VERSION = "0.1.0"
+TOOL_VERSION = "0.1.1"
 
 
 @dataclass

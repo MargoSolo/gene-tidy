@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gene-tidy"
-version = "0.1.0"
+version = "0.1.1"
 description = "No-code cleaning of messy gene/protein identifier tables, fully offline, with explicit ambiguity handling."
 readme = "README.md"
 requires-python = ">=3.10"

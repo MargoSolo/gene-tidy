@@ -106,7 +106,7 @@ def test_audit_has_provenance_columns(tmp_path):
     tp53 = audit[audit["input_value"] == "TP53"].iloc[0]
     assert tp53["matched_field"] == "symbol"
     assert str(tp53["candidate_count"]) == "1"
-    assert tp53["gene_tidy_version"] == "0.1.0"
+    assert tp53["gene_tidy_version"] == "0.1.1"
     mar = audit[audit["input_value"] == "1-Mar"].iloc[0]
     assert str(mar["candidate_count"]) == "2"
 
@@ -114,7 +114,7 @@ def test_audit_has_provenance_columns(tmp_path):
 def test_methods_text_contains_versions(tmp_path):
     df = pd.DataFrame({"gene": ["TP53"]})
     result = tidy_dataframe(df, id_columns=["gene"])
-    assert "gene-tidy v0.1.0" in result.methods_text
+    assert "gene-tidy v0.1.1" in result.methods_text
     assert "HGNC" in result.methods_text
 
 

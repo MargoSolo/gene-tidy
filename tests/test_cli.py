@@ -12,7 +12,7 @@ def _write_csv(path):
 def test_cli_version():
     result = runner.invoke(app, ["--version"])
     assert result.exit_code == 0
-    assert "gene-tidy 0.1.0" in result.stdout
+    assert "gene-tidy 0.1.1" in result.stdout
 
 
 def test_cli_runs_and_writes_outputs(tmp_path):

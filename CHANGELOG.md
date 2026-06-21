@@ -4,6 +4,19 @@ All notable changes to gene-tidy are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-06-21
+
+Documentation / metadata release for the public launch.
+
+### Changed
+- Improve the README / PyPI landing page with a clearer quick-start, before/after
+  examples, and a visible "Scope & limitations" section.
+
+### Unchanged
+- No functional changes.
+- Offline, HGNC-centered behavior unchanged.
+- Ambiguity / manual-review behavior unchanged.
+
 ## [0.1.0] - 2026-06-20
 
 First release candidate (`v0.1.0-rc1`).
@@ -55,4 +68,5 @@ Live API calls; HGVS, ClinVar, VEP, gnomAD, liftover, genome-build detection,
 clinical interpretation; non-human species; Ensembl transcript/protein-level
 resolution; reinterpreting numeric Excel date serials.
 
+[0.1.1]: https://github.com/MargoSolo/gene-tidy/releases/tag/v0.1.1
 [0.1.0]: https://github.com/MargoSolo/gene-tidy/releases/tag/v0.1.0-rc1
