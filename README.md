@@ -1,10 +1,11 @@
 # gene-tidy
 
-<!-- PyPI badge is "planned" until the package is published; CI badge will be added with a real GitHub Actions workflow. -->
 [![PyPI](https://img.shields.io/badge/PyPI-planned-lightgrey)](#install)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MargoSolo/gene-tidy/blob/main/notebooks/gene_tidy_colab.ipynb)
+
+<!-- PyPI badge is "planned" until the package is published; CI badge will be added with a real GitHub Actions workflow. -->
 
 **Clean messy gene/protein identifier tables — fully offline, fully audited, no code required.**
 
@@ -18,6 +19,7 @@ in Python, mapping to all major IDs, with **explicit ambiguity handling** and
 **Excel date-corruption recovery** (`SEPT2 → "2-Sep"`, `MARCH1 → "1-Mar"`).
 
 ![gene-tidy demo](docs/demo.gif)
+
 <!-- TODO: replace docs/demo.gif with a real screencast of the CLI / Colab run. -->
 
 ## Scope
