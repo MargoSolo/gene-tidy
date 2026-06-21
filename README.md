@@ -213,8 +213,6 @@ pip install -e ".[dev]"   # installs pytest, build, and twine
 pytest                    # 116 tests, all offline
 ```
 
-(Use `pip install -e ".[test]"` if you only need the test runner.)
-
 Test coverage: ID-type detection, column detection, resolver (alias / prev /
 Excel-corruption / ambiguity), input/output file handling, CLI, golden-output
 regression on the bundled example, and a data-boundary test that loads the real
@@ -235,7 +233,7 @@ python tools/build_hgnc_data.py --download                      # or fetch curre
 gene-tidy resolves identifiers using data from the **HUGO Gene Nomenclature
 Committee (HGNC)**.
 
-- **Source:** HGNC complete set (`hgnc_complete_set.txt`) from the [HGNC download archive](https://www.genenames.org/download/archive/). The exact download URL, snapshot date, and SHA-256 hashes are recorded in [`src/gene_tidy/data/hgnc_version.json`](src/gene_tidy/data/hgnc_version.json).
+- **Source:** HGNC complete set (`hgnc_complete_set.txt`) from the HGNC download archive. The exact source URL, snapshot date, and SHA-256 hashes are recorded in `src/gene_tidy/data/hgnc_version.json`.
 - **Snapshot bundled in this release:** see `downloaded_date` and
   `bundled_tsv_gz_sha256` in
   [`src/gene_tidy/data/hgnc_version.json`](src/gene_tidy/data/hgnc_version.json)
