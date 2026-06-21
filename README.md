@@ -1,11 +1,11 @@
 # gene-tidy
 
-[![PyPI](https://img.shields.io/badge/PyPI-planned-lightgrey)](#install)
+[![PyPI](https://img.shields.io/pypi/v/gene-tidy)](https://pypi.org/project/gene-tidy/)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MargoSolo/gene-tidy/blob/main/notebooks/gene_tidy_colab.ipynb)
 
-<!-- PyPI badge is "planned" until the package is published; CI badge will be added with a real GitHub Actions workflow. -->
+<!-- No CI badge until a real GitHub Actions workflow exists. -->
 
 **Clean messy gene/protein identifier tables — fully offline, fully audited, no code required.**
 
@@ -48,7 +48,13 @@ offline, auditable HGNC cleanup you can cite in a methods section, use gene-tidy
 
 ## Install
 
-Until the first PyPI release, install directly from GitHub:
+```bash
+pip install gene-tidy
+```
+
+Requires Python 3.10+. Dependencies: `pandas`, `openpyxl`, `typer`.
+
+To install the latest development version directly from GitHub:
 
 ```bash
 pip install git+https://github.com/MargoSolo/gene-tidy.git
@@ -61,10 +67,6 @@ git clone https://github.com/MargoSolo/gene-tidy
 cd gene-tidy
 pip install -e .
 ```
-
-> PyPI release is planned after the public release-candidate smoke test.
-
-Requires Python 3.10+. Dependencies: `pandas`, `openpyxl`, `typer`.
 
 ## Quickstart (CLI)
 
