@@ -20,8 +20,6 @@ in Python, mapping to all major IDs, with **explicit ambiguity handling** and
 ![gene-tidy demo](docs/demo.gif)
 <!-- TODO: replace docs/demo.gif with a real screencast of the CLI / Colab run. -->
 
----
-
 ## Scope
 
 gene-tidy is **HGNC-centered, offline, and reproducible**: it standardises human
@@ -211,9 +209,11 @@ click **Run** and see results immediately.
 ## Development
 
 ```bash
-pip install -e ".[test]"
-pytest                 # 100+ tests, all offline
+pip install -e ".[dev]"   # installs pytest, build, and twine
+pytest                    # 116 tests, all offline
 ```
+
+(Use `pip install -e ".[test]"` if you only need the test runner.)
 
 Test coverage: ID-type detection, column detection, resolver (alias / prev /
 Excel-corruption / ambiguity), input/output file handling, CLI, golden-output
@@ -235,9 +235,7 @@ python tools/build_hgnc_data.py --download                      # or fetch curre
 gene-tidy resolves identifiers using data from the **HUGO Gene Nomenclature
 Committee (HGNC)**.
 
-- **Source:** HGNC complete set, downloaded from
-  <https://www.genenames.org/download/archive/>
-  (file: `hgnc_complete_set.txt`).
+- **Source:** HGNC complete set (`hgnc_complete_set.txt`) from the [HGNC download archive](https://www.genenames.org/download/archive/). The exact download URL, snapshot date, and SHA-256 hashes are recorded in [`src/gene_tidy/data/hgnc_version.json`](src/gene_tidy/data/hgnc_version.json).
 - **Snapshot bundled in this release:** see `downloaded_date` and
   `bundled_tsv_gz_sha256` in
   [`src/gene_tidy/data/hgnc_version.json`](src/gene_tidy/data/hgnc_version.json)
